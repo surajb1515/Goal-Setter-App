@@ -2,8 +2,10 @@ import express from "express"
 import dotenv from 'dotenv'
 import router from "./routes/indexRoutes.js";
 import errorHandler from './middleware/errorMiddleware.js'
+import connectToMongo from "./config/db.js";
 
 
+connectToMongo();
 const PORT = process.env.PORT || 5000
 
 dotenv.config()
