@@ -1,6 +1,13 @@
 import asyncHandler from 'express-async-handler'
 import Goal from '../models/goalModel.js'
 
+
+
+
+
+
+
+
 // desc         Get Goals
 // @route       Get /api/goals
 // @access      Private
@@ -9,6 +16,11 @@ const getGoals = asyncHandler(async (req, res) => {
 
     res.status(200).json(goals)
 })
+
+
+
+
+
 
 
 
@@ -32,6 +44,9 @@ const setGoals = asyncHandler(async (req, res) => {
 
 
 
+
+
+
 // desc         Updata Goals
 // @route       PUT /api/goals:id
 // @access      Private
@@ -49,6 +64,10 @@ const updateGoal = asyncHandler(async (req, res) => {
 
     res.status(200).json(updatedGoal)
 })
+
+
+
+
 
 
 
