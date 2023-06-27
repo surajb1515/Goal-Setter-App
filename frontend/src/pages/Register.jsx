@@ -17,21 +17,24 @@ const Register = () => {
     }))
   }
 
+  const onSubmit = (e) => {
+
+  }
 
   return (
     <>
-      <section className="bg-gray-50 dark:bg-gray-900">
-        <div className="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+      <section className="mx-auto dark:bg-gray-900">
+        <div className="flex flex-col items-center px-6 mx-auto md:h-screen lg:py-0">
 
-          <div className="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
+          <div className="w-full bg-white rounded-lg shadow-lg dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
-              <h1 className="mb-8 text-3xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              <h1 className="mb-8 text-3xl font-bold leading-tight tracking-tight text-gray-900 md:text-4xl dark:text-white">
                 Sign in to your account
               </h1>
               <form
                 className="space-y-4 md:space-y-6"
                 action="#"
-                method=""
+                method="post"
               >
                 <div>
                   <label
@@ -110,12 +113,12 @@ const Register = () => {
                 </button>
                 <p className="text-sm font-light text-gray-500 dark:text-gray-400">
                   Alredy have an account ?{" "}
-                  <a
-                    href="#"
+                  <Link
+                    to="/login"
                     className="font-medium text-blue-600 hover:underline dark:text-blue-500"
                   >
                     Login In
-                  </a>
+                  </Link>
                 </p>
               </form>
             </div>
