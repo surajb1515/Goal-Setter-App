@@ -1,5 +1,12 @@
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useSelector, useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify'
+import { login, reset } from "../appRedux/auth/authSlice";
+import Spinner from "../Components/Spinner";
+
+
 
 const Login = () => {
 
@@ -7,6 +14,31 @@ const Login = () => {
     email: '',
     password: '',
   });
+
+
+
+  const { name, email, password, password2 } = formData
+
+  const navigate = useNavigate()
+  const dispatch = useDispatch()
+
+  const { user, isLoading, isError, isSuccess, message } = useSelector((state) => state.auth)
+
+
+
+  useEffect(() => {
+    if (isError) {
+      toast.error(message)
+    }
+    if (isSuccess || user) {
+      navigate("/")
+    }
+
+    // to reset the state properties
+    dispatch(reset())
+  }, [user, isError, isSuccess, message, navigate, dispatch])
+
+
 
   const onchange = (e) => {
     setFormData((prevState) => ({
@@ -16,7 +48,19 @@ const Login = () => {
   }
 
   const onSubmit = (e) => {
+    e.preventDefault();
 
+    const userData = {
+      email,
+      password,
+    }
+
+    dispatch(login(userData))
+  }
+
+
+  if (isLoading) {
+    return <Spinner />
   }
 
   return (
@@ -33,6 +77,7 @@ const Login = () => {
                 className="space-y-4 md:space-y-6"
                 action="#"
                 method="post"
+                onSubmit={onSubmit}
               >
 
                 <div>
