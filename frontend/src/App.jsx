@@ -1,4 +1,6 @@
 import React from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { Router, Routes, Route } from 'react-router-dom'
 import Header from '../src/Components/Header'
 import Dashboard from './pages/Dashboard'
@@ -18,6 +20,7 @@ const App = () => {
           <Route path='/register' element={<Register />} />
         </Routes>
       </div>
+      <ToastContainer />
       {/* </Router> */}
     </>
   )
