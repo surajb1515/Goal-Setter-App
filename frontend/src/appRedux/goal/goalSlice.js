@@ -61,6 +61,8 @@ export const deleteGoal = createAsyncThunk('goals/delete', async (id, thunkAPI) 
 
   try {
     const token = thunkAPI.getState().auth.user.token
+    // console.log(thunkAPI)
+    // console.log(thunkAPI.getState())
     return await goalService.deleteGoal(id, token)
   }
 
@@ -133,6 +135,7 @@ export const goalSlice = createSlice({
 })
 
 
-
+// for accessing the reducers 
 export const { reset } = goalSlice.actions
 export default goalSlice.reducer
+// mainly for accessing the state

@@ -11,8 +11,9 @@ const GoalForm = () => {
 
 
   const onSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault()    // to prevent page reloading
 
+    // dispatching an event to the store
     dispatch(createGoal({ text }))
     setText('')
   }
