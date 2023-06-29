@@ -44,7 +44,7 @@ export const login = createAsyncThunk('auth/login', async (user, thunkAPI) => {
 
 
 // Logout user
-export const logout = createAsyncThunk('http://localhost:8000/auth/logout', async () => {
+export const logout = createAsyncThunk('https://goal-setter-app-1b56.onrender.com/auth/logout', async () => {
   await authService.logout()
 })
 
