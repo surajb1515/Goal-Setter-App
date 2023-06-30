@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'https://goal-setter-app-1b56.onrender.com/api/goals/'
+const API_URL = 'http://localhost:8000/api/goals/'
 
 
 

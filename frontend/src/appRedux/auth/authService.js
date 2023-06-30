@@ -10,7 +10,7 @@ const API_URL = '/api/users/'
 
 // Register user
 const register = async (userData) => {
-  const responce = await axios.post('https://goal-setter-app-1b56.onrender.com/api/users', userData)
+  const responce = await axios.post('http://localhost:8000/api/users', userData)
 
   if (responce.data) {
     localStorage.setItem('user', JSON.stringify(responce.data))
@@ -26,7 +26,7 @@ const register = async (userData) => {
 
 // login user
 const login = async (userData) => {
-  const responce = await axios.post('https://goal-setter-app-1b56.onrender.com/api/users/login', userData)
+  const responce = await axios.post('http://localhost:8000/api/users/login', userData)
 
   if (responce.data) {
     localStorage.setItem('user', JSON.stringify(responce.data))
